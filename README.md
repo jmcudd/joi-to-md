@@ -2,7 +2,7 @@
 
 ```
 import Joi from "joi";
-import joiToMd from "./main.js";
+import joiToMd from "joi-to-md";
 
 //Example JOI Schema
 const schema = Joi.object({
