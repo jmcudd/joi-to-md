@@ -1,9 +1,12 @@
 {
   "name": "joi-to-md",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Converts Joi Schemas into Markdown documentation",
   "main": "index.js",
-  "module": "main.js",
+  "module": {
+    "main": "index.js",
+    "module": "main.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +14,5 @@
   "license": "MIT",
   "dependencies": {
     "esm": "^3.2.25"
-  },
-  "module": {
-    "main": "index.js",
-    "module": "main.js"
   }
 }
