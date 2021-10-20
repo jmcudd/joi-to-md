@@ -11,5 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "esm": "^3.2.25"
+  },
+  "module": {
+    "main": "index.js",
+    "module": "main.js"
   }
 }
