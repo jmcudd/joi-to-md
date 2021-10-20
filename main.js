@@ -43,9 +43,7 @@ export default function joiToMd(
         output = joiToMd(schema.keys[key], level + 2, output + "\n");
       }
       if (_.get(schema, `keys[${key}].type`) == "array") {
-        console.log("FOUND ARRAY");
         _.get(schema, `keys[${key}].items`).forEach((item) => {
-          console.log("ARRAY ITEM", item);
           output = joiToMd(item, level + 2, output + "\n");
         });
       }
