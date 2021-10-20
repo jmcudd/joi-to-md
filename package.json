@@ -8,7 +8,7 @@
     "module": "main.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node -r esm test.js"
   },
   "homepage": "https://github.com/jmcudd/joi-to-md",
   "contributors": [
@@ -19,6 +19,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "joi": "^17.4.2",
+    "lodash": "^4.17.21"
   }
 }

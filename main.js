@@ -16,8 +16,8 @@ export default function joiToMd(
 ) {
   if (level == 0) {
     schema = schema.describe();
-    output += `# ${name}\n\n`;
   }
+
   if (schema.type == "object") {
     Object.keys(schema.keys).forEach((key) => {
       output += indent(level) + `* **\`${key}\`** `;
@@ -34,11 +34,20 @@ export default function joiToMd(
             "`) ";
         }
       } else {
-        output +=
-          " (default: `" + _.get(schema, `keys[${key}].flags.default`) + "`)";
+        if (_.get(schema, `keys[${key}].flags.default`)) {
+          output +=
+            " (default: `" + _.get(schema, `keys[${key}].flags.default`) + "`)";
+        }
       }
       if (_.get(schema, `keys[${key}].type`) == "object") {
         output = joiToMd(schema.keys[key], level + 2, output + "\n");
+      }
+      if (_.get(schema, `keys[${key}].type`) == "array") {
+        console.log("FOUND ARRAY");
+        _.get(schema, `keys[${key}].items`).forEach((item) => {
+          console.log("ARRAY ITEM", item);
+          output = joiToMd(item, level + 2, output + "\n");
+        });
       }
       if (_.get(schema, `keys[${key}].notes`)) {
         output += "\n" + indent(level + 2) + "**notes:** \n";
