@@ -10,7 +10,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "homepage": "https://github.com/jmcudd/joi-to-md",
+  "contributors": [
+    {
+      "name": "John Cudd",
+      "email": "john.cudd@greymatter.io"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "esm": "^3.2.25"
